@@ -1,4 +1,6 @@
 board=(" " " " " " " " " " " " " " " " " ")
+player=1
+input_msg="Invalid input. Please re-enter."
 
 win_combos=(
         "0 1 2" "3 4 5" "6 7 8"  # Rows
@@ -14,6 +16,16 @@ display_board() {
     echo " ${board[6]} | ${board[7]} | ${board[8]} "
 }
 
+save_game() {
+    printf "%s\n" "${board[@]}" > saved_board.txt
+    echo "$player" > saved_player.txt
+}
+
+load_game() {
+    readarray -t board < saved_board.txt
+    read player < saved_player.txt
+}
+
 intro() {
     echo "Welcome to tic-tac-toe, players!"
     echo "Choose the sign, and remember,"
@@ -23,15 +35,20 @@ intro() {
     echo "Positions of numbers go from left to right and from top to bottom"
     echo "the board looks like this:"
     display_board
-    echo "First player begins the game with X"
-    echo "Would you like to start? Press Y when ready:"
+    echo "To save the game, press S during your turn"
+    echo "Would you like to start?"
+    echo "Press 1 for a new game, Press 2 to load saved game"
     while true; do
         read choice
-    if [ "$choice" == "Y" ]; then
+    if [ "$choice" == "1" ]; then
         echo "Start!"
         play
+    elif [[ "$choice" == "2" && -e saved_board.txt ]]; then
+        load_game
+        echo "Resume!"
+        play
     else
-        echo "Invalid input. Please re-enter."
+        echo input_msg
     fi
     done
 }
@@ -44,10 +61,24 @@ turn() {
         else
             board[$number]="O"
         fi
-        player=$((3 - player))  # Switch player between 1 and 2
-        echo "Turn recorded!"
+        player=$((3 - player))
+    elif [ "$number" == "S" ]; then
+        echo "Saving..."
+        save_game
+        echo "Done!"
+        while true; do
+            read -p "Would you like to continue? Y/N:  " decision
+            if [[ "$decision" == "Y" ]]; then
+                break
+            elif [[ "$decision" == "N" ]]; then
+                echo "Bye!"
+                exit 0
+            else 
+               echo 
+            fi
+        done
     else
-        echo "Invalid input. Please re-enter."
+        echo input_msg
         turn
     fi
 }
@@ -71,7 +102,6 @@ check_winner() {
 }
 
 play() {
-    local player=1
     while true; do
         display_board
         turn
