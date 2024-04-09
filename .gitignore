@@ -1,4 +1,4 @@
 .idea/
 
-./bot/.rasa
-./bot/models
+./bot/.rasa/*
+./bot/models/*
