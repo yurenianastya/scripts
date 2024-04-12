@@ -27,30 +27,31 @@ responses:
   utter_provide_time:
   - text: "please, specify time range"
 
+  utter_menu:
+  - text: "here is the menu:"
+
 actions:
   - action_check_open_hours
+  - action_show_menu
+  - action_order
 
 entities:
-- menu
+- order
 - given_hour
 
 slots:
-  menu:
-    type: text
+  order:
+    type: list
     mappings:
     - type: from_entity
-      entity: menu
-  given_hour:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: given_hour
-
+      entity: order
 
 forms:
-  restaurant_form:
-    required_slots:
-        - menu
+  order_form:
+    menu_item:
+      - type: from_entity
+        entity: menu_item
+        influence_conversation: true
 
 session_config:
   session_expiration_time: 60

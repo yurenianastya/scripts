@@ -12,3 +12,15 @@ stories:
   - action: action_check_open_hours
   - intent: goodbye
   - action: utter_goodbye
+
+- story: show_menu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: menu_items
+  - action: action_show_menu
+
+- story: order
+  steps:
+  - intent: order_food
+  - action

@@ -2,3 +2,4 @@
 
 ./bot/.rasa/*
 ./bot/models/*
+./bot/credentials.yml
