@@ -30,36 +30,6 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - OK
-    - okay
-    - k
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - nope
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
 - intent: is_open
   examples: |
     - is open
@@ -75,14 +45,12 @@ nlu:
     - what is on the menu
     - menu
     - menu for today
-    - what can i order
     - today's menu
 
-- intent: order_food
+- intent: start_order_food
   examples: |
     - i would like to order
-    - meal
-    - order
+    - start order
     - i want to place an order
     - can i order
 
@@ -94,3 +62,25 @@ nlu:
     - friday 6
     - 13 oclock at monday
     - 2 saturday
+    - 13 at monday
+    - wednesday 17
+    - sunday at 2
+
+- intent: show_order
+  examples: |
+    - please show my order
+    - show current order
+    - what is ordered
+    - the full order
+    - full order list, please
+    - show the full order list
+    - show order
+
+- intent: add_item_to_order
+  examples: |
+    - I would like to order [Tiramisu](food_item)
+    - can you add [Spaghetti Carbonara](food_item) to my order?
+    - Please include [Pizza](food_item)
+    - please add [Hot-dog](food_item)
+    - add [Burger](food_item)
+    - i want [Lasagne](food_item)

@@ -9,17 +9,65 @@ import re
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 from typing import Any, Text, Dict, List
 
 
-class ActionOrder(Action):
+class ActionAddOrder(Action):
 
     def name(self) -> Text:
-        return "action_order"
+        return "action_order_food"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        with open("menu.json", "r") as file:
+            menu = json.load(file)
+
+        current_order = tracker.get_slot('order')
+        entities = tracker.latest_message.get('entities', [])
+        new_items = set()
+
+        for entity in entities:
+            if entity['entity'] == 'food_item':
+                food_item = entity['value']
+                if any(item.get("name", "").lower() == food_item.lower() for item in menu["items"]):
+                    new_items.add(food_item)  # Add the food item to the set
+                else:
+                    dispatcher.utter_message(
+                        text=f"Sorry, {food_item} is not available on our menu. Can I help you with something else?")
+
+        if new_items:
+            if not current_order:
+                current_order = ', '.join(new_items)
+            else:
+                current_order += ", " + ', '.join(new_items)
+            dispatcher.utter_message(text=f"Sure, I've added {' and '.join(new_items)} to your order.")
+            return [SlotSet("order", current_order)]
+        else:
+            return []
+
+
+class ActionShowOrder(Action):
+
+    def name(self) -> Text:
+        return "action_show_order"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        current_order = tracker.get_slot('order')
+
+        if current_order:
+            response = "Your current order:\n"
+            items = current_order.split(", ")
+            for item in items:
+                response += f"- {item}\n"
+
+            dispatcher.utter_message(text=response)
+        else:
+            dispatcher.utter_message(text="Your order is empty.")
+
         return []
 
 

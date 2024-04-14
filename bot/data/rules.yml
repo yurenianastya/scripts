@@ -7,18 +7,23 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Say hello anytime the user says goodbye
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: greet
+  - action: utter_greet
+
 
 - rule: Provide restaurant status anytime the user asks
   steps:
-  - intent: is_open
-  - action: utter_provide_time
+  - intent: datetime
+  - action: action_check_open_hours
 
-- rule: Activate form
+- rule: Note order when typed
   steps:
-  - intent: order_food
-  - action: restaurant_form
-  - active_loop: restaurant_form
+  - intent: start_order_food
+  - action: utter_start_order
+
+- rule: Show current order when prompted
+  steps:
+    - intent: show_order
+    - action: action_show_order

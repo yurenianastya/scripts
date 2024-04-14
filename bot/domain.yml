@@ -3,13 +3,12 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - bot_challenge
   - is_open
   - datetime
   - menu_items
-  - order_food
+  - start_order_food
+  - show_order
+  - add_item_to_order
 
 responses:
   utter_greet:
@@ -19,39 +18,31 @@ responses:
   - text: "Did that help you?"
 
   utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Bye!"
 
   utter_provide_time:
   - text: "please, specify time range"
 
-  utter_menu:
-  - text: "here is the menu:"
+  utter_start_order:
+    - text: "please, type which dishes you would like"
 
 actions:
   - action_check_open_hours
   - action_show_menu
-  - action_order
+  - action_order_food
+  - action_show_order
 
 entities:
 - order
 - given_hour
+- food_item
 
 slots:
   order:
-    type: list
+    type: text
     mappings:
     - type: from_entity
-      entity: order
-
-forms:
-  order_form:
-    menu_item:
-      - type: from_entity
-        entity: menu_item
-        influence_conversation: true
+      entity: food_item
 
 session_config:
   session_expiration_time: 60

@@ -4,23 +4,22 @@ stories:
 
 - story: just_open_status
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: is_open
   - action: utter_provide_time
   - intent: datetime
   - action: action_check_open_hours
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: show_menu
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: menu_items
   - action: action_show_menu
+  - action: utter_did_that_help
 
-- story: order
+- story: order_food_and_show
   steps:
-  - intent: order_food
-  - action
+  - intent: start_order_food
+  - action: utter_start_order
+  - intent: add_item_to_order
+  - action: action_order_food
+  - intent: show_order
+  - action: action_show_order
