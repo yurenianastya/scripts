@@ -20,7 +20,7 @@ Python: Czatbot
 
 ✅ 3.5 Information about opening hours and menu items should be fetched from the configuration file. [Link do commita 2](https://github.com/yurenianastya/scripts/commit/9a339596aa0f1bac82ca02f08ad69fc5858202ba#diff-1d7bbfbfe9cb43782971fc3c92d834053218e91055cebb93e07406473ced592a)
 
-4.0 Chatbot needs to process the order and confirm purchased meals, as well as additional requests.
+✅ 4.0 Chatbot needs to process the order and confirm purchased meals, as well as additional requests. [Link do commita 3](https://github.com/yurenianastya/scripts/commit/217d020662133189b78972d31a89ea54bf8647d4#diff-1d7bbfbfe9cb43782971fc3c92d834053218e91055cebb93e07406473ced592a)
 
 4.5 Chatbot needs to confirm when the meal will be available as a pick-up in the restaurant.
 
