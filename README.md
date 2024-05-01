@@ -27,3 +27,19 @@ Python: Czatbot
 5.0 Chatbot should ask and confirm the delivery address instead of pick-up option
 
 Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/rasabot)
+
+## Zadanie 3 ##
+JS: Sklep w ReactJS + NodeJS
+Należy stworzyć prosty sklep z serwerem REST API
+
+✅3.0 Aplikacja ma podstawowe endpointy w NodeJS (np. Express) do produktów i kategorii [link do commita 1](https://github.com/yurenianastya/scripts/blob/js-shop/backend/routes/index.js)
+
+✅3.5 Dane zapisywanie są w bazie danych po stronie NodeJS [link do commita 2](https://github.com/yurenianastya/scripts/blob/js-shop/backend/controller/controller.js)
+
+✅4.0 Axios wykorzystany do wywołań [link do commita 3](https://github.com/yurenianastya/scripts/blob/js-shop/frontend/src/components/categories.jsx)
+
+4.5 Opcja koszyka i płatności działa na React Hook
+
+✅5.0 Konfiguracja CORS po stronie NodeJS + konfiguracja po stronie ReactJS [Link do commita 5](https://github.com/yurenianastya/scripts/blob/js-shop/backend/app.js)
+
+Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/js-shop)
