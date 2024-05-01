@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: theme('fontFamily.mono'), monospace;
+  background-color: theme('colors.deift-blue');
+}
+
+.logo {
+  @apply text-7xl text-center
+  bg-space-cadet border-spacing-1 p-7;
+}
