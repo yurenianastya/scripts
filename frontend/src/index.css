@@ -5,10 +5,51 @@
 body {
   margin: 0;
   font-family: theme('fontFamily.mono'), monospace;
-  background-color: theme('colors.deift-blue');
+  background-color: theme('colors.light');
 }
 
 .logo {
-  @apply text-7xl text-center
-  bg-space-cadet border-spacing-1 p-7;
+  @apply text-4xl text-center
+  bg-dark border-spacing-1 p-7;
+}
+
+.card {
+  @apply flex w-full max-w-80 bg-pale
+  border border-dark rounded-lg
+  p-4 m-1.5
+}
+
+.card-title {
+  @apply text-xl font-semibold
+}
+
+.card-price {
+  @apply text-2xl font-bold
+}
+
+.product-list {
+  @apply flex flex-wrap
+}
+
+.sidebar {
+  @apply shrink-0 m-2
+}
+
+.buy-btn {
+  @apply bg-pink px-5 py-2
+  rounded-lg
+}
+
+.cart-wrap {
+  @apply fixed top-0 right-0 w-1/4
+  h-screen bg-pale p-4 overflow-y-auto;
+}
+
+.cart-item {
+  @apply flex items-center justify-between m-2;
+}
+
+.category-list-item {
+  @apply bg-pink px-5 py-2
+  rounded-lg p-4 mb-1.5
 }

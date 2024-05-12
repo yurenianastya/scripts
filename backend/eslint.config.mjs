@@ -18,6 +18,7 @@ export default [
     devDependencies: false,
     optionalDependencies: false,
     peerDependencies: false
-  }]
+  }],
+      "import/no-cycle": "error"
   }}
 ];

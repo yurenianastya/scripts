@@ -1,11 +1,10 @@
 const express = require('express');
 const { Product } = require('../model/models');
 const { getUniqueCategories } = require('../controller/controller');
-const { logger } = require('../app');
 
 const router = express.Router();
 
-// CRUD for products
+// CRUD
 
 router.get('/products', async (req, res) => {
   const queryVals = await Product.findAll();
@@ -16,7 +15,7 @@ router.get('/categories', async (req, res) => {
   const queryVals = getUniqueCategories()
     .then((categories) => categories)
     .catch((error) => {
-      logger.error('Error:', error);
+      console.error('Error:', error);
       throw error;
     });
 
@@ -26,8 +25,24 @@ router.get('/categories', async (req, res) => {
     })
     .catch((error) => {
       res.status(500).json({ error: 'Internal Server Error' });
-      logger.error('Error:', error);
+      console.error('Error:', error);
     });
+});
+
+router.get('/products/:category', async (req, res) => {
+  const { category } = req.params;
+  console.log(req.params);
+  try {
+    const queryVals = await Product.findAll({
+      where: {
+        category,
+      },
+    });
+    res.json(queryVals);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 module.exports = router;
