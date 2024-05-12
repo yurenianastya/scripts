@@ -38,7 +38,7 @@ Należy stworzyć prosty sklep z serwerem REST API
 
 ✅4.0 Axios wykorzystany do wywołań [link do commita 3](https://github.com/yurenianastya/scripts/blob/js-shop/frontend/src/components/categories.jsx)
 
-4.5 Opcja koszyka i płatności działa na React Hook
+✅4.5 Opcja koszyka i płatności działa na React Hook [link do commita 4](https://github.com/yurenianastya/scripts/commit/a1ad8216a4ec0ab19a6709e39153cb252c967340#diff-70f9df16a6f4f090f5aaf25f69c9fb7cabb90f32969107f4e54a8a1e280d7237)
 
 ✅5.0 Konfiguracja CORS po stronie NodeJS + konfiguracja po stronie ReactJS [Link do commita 5](https://github.com/yurenianastya/scripts/blob/js-shop/backend/app.js)
 
