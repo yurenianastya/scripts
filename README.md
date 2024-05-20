@@ -43,3 +43,20 @@ Należy stworzyć prosty sklep z serwerem REST API
 ✅5.0 Konfiguracja CORS po stronie NodeJS + konfiguracja po stronie ReactJS [Link do commita 5](https://github.com/yurenianastya/scripts/blob/js-shop/backend/app.js)
 
 Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/js-shop)
+
+## Zadanie 4 ##
+Tetris w Lua
+
+Należy stworzyć grę Tetris w Lua na frameworku Löve (https://love2d.org/).
+
+✅ 3.0 Postawowa wersja dekstopowa z obsługą na klawiaturze - minimum 4 rodzaje klocków [Link do commita 1](https://github.com/yurenianastya/scripts/blob/lua-tetris/main.lua)
+
+✅ 3.5 Zapis i odczyt gier [Link do commita 2](https://github.com/yurenianastya/scripts/blob/lua-tetris/main.lua#L191)
+
+✅ 4.0 Dodanie efektów dźwiękowych przy akcjach [Link do commita 3](https://github.com/yurenianastya/scripts/blob/lua-tetris/main.lua#L68)
+
+✅ 4.5 Dodanie animacji przy zbijaniu klocków [Link do commita 4](https://github.com/yurenianastya/scripts/blob/lua-tetris/main.lua#L47)
+
+✅ 5.0 Wersja na iOS lub Android z implementacją touch zamiast klawiatury [Link do commita 5](https://github.com/yurenianastya/scripts/blob/lua-tetris/main_mobile.lua)
+
+Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/lua-tetris)
