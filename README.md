@@ -57,6 +57,6 @@ Należy stworzyć grę Tetris w Lua na frameworku Löve (https://love2d.org/).
 
 ✅ 4.5 Dodanie animacji przy zbijaniu klocków [Link do commita 4](https://github.com/yurenianastya/scripts/blob/lua-tetris/main.lua#L47)
 
-✅ 5.0 Wersja na iOS lub Android z implementacją touch zamiast klawiatury [Link do commita 5](https://github.com/yurenianastya/scripts/blob/lua-tetris/main_mobile.lua)
+✅ 5.0 Wersja na iOS lub Android z implementacją touch zamiast klawiatury [Link do commita 5](https://github.com/yurenianastya/scripts/blob/lua-tetris/main_mobile.lua#L77)
 
 Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/lua-tetris)
