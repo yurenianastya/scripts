@@ -60,3 +60,18 @@ Należy stworzyć grę Tetris w Lua na frameworku Löve (https://love2d.org/).
 ✅ 5.0 Wersja na iOS lub Android z implementacją touch zamiast klawiatury [Link do commita 5](https://github.com/yurenianastya/scripts/blob/lua-tetris/main_mobile.lua#L77)
 
 Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/lua-tetris)
+
+## Zadanie 5 ##
+Mario w Ruby2d
+
+✅ 3.0 Należy stworzyć jeden poziom z przeszkodami oraz dziurami w które można wpaść i zginąć [Link do commita 1](https://github.com/yurenianastya/scripts/blob/mario-ruby/mario.rb)
+
+✅ 3.5 Należy dodać opcję zbierania punktów [Link do commita 2](https://github.com/yurenianastya/scripts/blob/mario-ruby/mario.rb#L124)
+
+✅ 4.0 Należy dodać przeciwników, których można zabić oraz 3 życia [Link do commita 3](https://github.com/yurenianastya/scripts/blob/mario-ruby/mario.rb#L158)
+
+✅ 4.5 Ładowanie poziomów z pliku [Link do commita 4](https://github.com/yurenianastya/scripts/blob/mario-ruby/mario.rb#L89)
+
+✅ 5.0 Generator poziomów [Link do commita 5](https://github.com/yurenianastya/scripts/blob/mario-ruby/generate.rb)
+
+Kod: [link do brancha](https://github.com/yurenianastya/scripts/tree/mario-ruby)
